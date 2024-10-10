@@ -1,8 +1,5 @@
-## Capacitor + Phaser
+## Ryder's Bubble Roundup
 
-Use this starter to build mobile games using Capacitor and [Phaser](https://phaser.io).  This starter uses [Vite](https://vitejs.dev/) with TypeScript which is a great stack for building apps.
+Built from the Capacitor + Phaser starter found here: https://github.com/ionic-team/capacitor-starters/tree/main/phaser
 
-Capacitor and Phaser form the basis of such popular games as [Vampire Survivors](https://store.steampowered.com/app/1794680/Vampire_Survivors/) 🧛‍♂️.
-
-<img src="./screenshot-ios.png" width="468" title="iOS Screenshot">
-
+This is an open-source example of how to build a game with Capacitor + Phaser, with easy to follow commits

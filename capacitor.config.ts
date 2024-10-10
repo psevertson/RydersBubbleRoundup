@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.example.app',
-  appName: 'phaser-project-template',
+  appId: 'com.portersevertson.ryders-bubble-roundup',
+  appName: 'ryders-bubble-roundup',
   webDir: 'dist',
   bundledWebRuntime: false
 };

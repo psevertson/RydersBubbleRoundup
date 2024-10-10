@@ -1,5 +1,6 @@
 {
-  "name": "phaser",
+  "name": "ryders-bubble-roundup",
+  "author": "Porter Severtson <portersevertson@gmail.com>",
   "private": true,
   "version": "0.0.0",
   "type": "module",
