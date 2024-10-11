@@ -18,9 +18,7 @@ export default class MainScene extends Phaser.Scene {
     let scale = Math.max(scaleX, scaleY)
     image.setScale(scale).setScrollFactor(0)
 
-    const particles = this.add.particles('red')
-
-    const emitter = particles.createEmitter({
+    const particles = this.add.particles(0, 0, 'red', {
       speed: 100,
       scale: { start: 1, end: 0 },
       blendMode: 'ADD',
@@ -32,6 +30,6 @@ export default class MainScene extends Phaser.Scene {
     logo.setBounce(1, 1)
     logo.setCollideWorldBounds(true)
 
-    emitter.startFollow(logo)
+    particles.startFollow(logo)
   }
 }
