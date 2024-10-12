@@ -1,4 +1,5 @@
 import 'phaser';
+import { TextButton } from '../components/text-button';
 
 export default class MainScene extends Phaser.Scene {
   constructor() {
@@ -6,30 +7,28 @@ export default class MainScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('sky', 'assets/skies/space3.png')
-    this.load.image('logo', 'assets/sprites/phaser3-logo.png')
-    this.load.image('red', 'assets/particles/red.png')
+    this.load.image('bg', 'assets/bg/desertbg.webp')
   }
 
   create() {
-    let image = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'sky')
-    let scaleX = this.cameras.main.width / image.width
-    let scaleY = this.cameras.main.height / image.height
+    const screen = this.cameras.main
+  
+    //Background
+    let image = this.add.image(screen.width / 2, screen.height / 2, 'bg')
+    let scaleX = screen.width / image.width
+    let scaleY = screen.height / image.height
     let scale = Math.max(scaleX, scaleY)
-    image.setScale(scale).setScrollFactor(0)
+    image.setScale(scale)//.setScrollFactor(0)
 
-    const particles = this.add.particles(0, 0, 'red', {
-      speed: 100,
-      scale: { start: 1, end: 0 },
-      blendMode: 'ADD',
-    })
+    //Logo
+    this.add.text(screen.width / 2, 200, 'Ryder\'s Bubble Roundup', { font: '64px Courier', fill: '#f00' }).setOrigin(0.5, 0.5);
 
-    const logo = this.physics.add.image(400, 100, 'logo')
+    //Play Button
+    const playButton = new TextButton(this, screen.width / 2, screen.height / 2, 'Play', { font: '64px Courier', fill: '#f00'}, () => this.playButton()).setOrigin(0.5, 0.5);
+    this.add.existing(playButton); 
+  }
 
-    logo.setVelocity(100, 200)
-    logo.setBounce(1, 1)
-    logo.setCollideWorldBounds(true)
-
-    particles.startFollow(logo)
+  playButton() {
+    this.scene.switch("game")
   }
 }

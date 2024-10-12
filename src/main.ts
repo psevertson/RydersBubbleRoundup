@@ -1,5 +1,6 @@
 import 'phaser'
 import MainScene from './scenes/main'
+import GameScene from './scenes/game'
 
 const config = {
   type: Phaser.AUTO,
@@ -10,12 +11,12 @@ const config = {
     width: window.innerWidth * window.devicePixelRatio,
     height: window.innerHeight * window.devicePixelRatio
   },
-  scene: [MainScene],
+  scene: [MainScene, GameScene],
   physics: {
     default: 'arcade',
     arcade: {
       debug: false,
-      gravity: { y: 200 }
+      gravity: { y: 200, x: 0 }
     }
   }
 }
